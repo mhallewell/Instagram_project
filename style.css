@@ -1,0 +1,50 @@
+/* PAGE LAYOUT */
+.pagelayout{
+  position: relative;
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 75%;
+
+}
+
+/* NAVBAR */
+nav{
+  position: fixed;
+  top: 5px;
+  left: 10%;
+  width: 100%;
+  z-index: 9999;
+  margin: 10px 175px 0 0;
+  display:inline;}
+
+  a{
+  border-style: solid;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-color: lightblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  float: left;
+  background-color: lightblue;
+}
+a:visited{
+  text-decoration: none;
+  color:  white;
+}
+a:active{
+  text-decoration: none;
+  color: white;
+  background-color: lightblue;
+}
+
+a:hover{
+  color: black;
+  background-color: white;
+  border-color: white;
+}
