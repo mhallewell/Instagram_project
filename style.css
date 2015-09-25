@@ -8,7 +8,7 @@
   max-width: 75%;
 
 }
-.cs-clear:after, .cs-squeeze:after {
+.cs-:after, .cs-squeeze:after {
   display: block;
   font-size: 0;
   content: " ";
@@ -86,7 +86,8 @@ nav{
   width: 100%;
   z-index: 9999;
   margin: 10px 175px 0 0;
-  display:inline;}
+  display:inline;
+}
 
   a{
   border-style: solid;
@@ -102,6 +103,13 @@ nav{
   float: left;
   background-color: lightblue;
 }
+/*.body A:link{
+  border-style: none;
+  text-decoration: none;
+  color: grey;
+  float: none;
+  background-color: white;
+}*/
 a:visited{
   text-decoration: none;
   color:  white;
@@ -129,10 +137,10 @@ a:hover{
   padding: 5px;
 }
   .box:nth-child(n) {
-    margin-bottom: 2%;
-    margin-right: 2%;
+    margin-bottom: 5%;
+    margin-right: 5%;
   }
-  .box:nth-child(3n) {
+  .box:nth-child(n) {
     margin-right: 0;
     margin-bottom: 0;
   }
@@ -141,3 +149,6 @@ a:hover{
     margin: 0 0 10px;
     width: 100%;
   }
+  /*.p2{
+    float: right;
+  }*/
