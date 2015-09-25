@@ -148,12 +148,18 @@ input{
 .spacefromtop{
   margin-top:80px;
 }
+.searchbar{
+  margin-bottom: 20px;
+}
 .button{
   position: relative;
   cursor: pointer;
-  margin: -1px 0 20px 20px;
+  margin: -1px 0 0px 20px;
   width: 60px;
   height: 27px;
+}
+.button:hover{
+  cursor: pointer;
 }
 
 .newline{
