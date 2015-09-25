@@ -231,6 +231,11 @@ input{
   .bio{
     margin: 0 5% 5% 3.5%;
   }
+  /*Javascript stuff */
+.error{
+  border: 1px solid red;
+}
+  /* End of Javascript stuff*/
 
   /*.p2{
     float: right;

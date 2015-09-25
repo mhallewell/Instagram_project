@@ -3,6 +3,8 @@
   <head>
     <title>Search</title>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="main.js"></script>
   </head>
   <body class="cs-squeeze">
     <nav class="navbar left">
@@ -16,10 +18,10 @@
     <div class="spacefromtop"></div>
     <div class="pull-left searchbar">
       <strong class="left newline">Search by Hashtag below:</strong>
-      <form class="pull-left" action="savedsearches.html" method="post">
-        <input type="pull-left search" name="name" value="">
-        <button class = "button pull-left" action="savedsearches.html" type="button" name="searchbutton">Search</button>
-        
+      <form class="pull-left" method="post" action="">
+        <input class="searchit pull-left" type="text" name="searchit" value="">
+        <input class= "searchbutton button pull-left" type="submit" name="searchbutton"
+                value="Search">
       </form>
     </div>
 
