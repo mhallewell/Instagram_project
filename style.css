@@ -7,7 +7,7 @@
 .right{
   float: right;
 }
-.cs-clear:after, .cs-squeeze:after {
+.cs-:after, .cs-squeeze:after {
   display: block;
   font-size: 0;
   content: " ";
@@ -83,8 +83,12 @@ nav{
   top: 5px;
   width: 100%;
   z-index: 9999;
-  margin: 10px 0 10px 0;
-  display:inline-block;
+
+  margin: 10px 175px 0 0;
+  display:inline;
+
+  /*margin: 10px 0 10px 0;
+  display:inline-block;*/
   background-color: white;
 }
 
@@ -101,6 +105,13 @@ a{
   color: white;
   background-color: lightblue;
 }
+/*.body A:link{
+  border-style: none;
+  text-decoration: none;
+  color: grey;
+  float: none;
+  background-color: white;
+}*/
 a:visited{
   text-decoration: none;
   color:  white;
@@ -128,7 +139,6 @@ a:hover{
 form.input{
   position: relative;
   display:inline;
-
 }
 input{
   width:200px;
@@ -137,12 +147,22 @@ input{
 .spacefromtop{
   margin-top:80px;
 }
+.searchbar{
+  margin-bottom: 20px;
+}
 .button{
   position: relative;
   cursor: pointer;
-  margin: -1px 0 0 20px;
+  margin: -1px 0 0px 20px;
   width: 60px;
   height: 27px;
+}
+.button:hover{
+  cursor: pointer;
+}
+
+.newline{
+  width: 100%;
 }
 /* end of search.html specific css */
 
@@ -178,10 +198,10 @@ input{
   padding: 5px;
 }
   .box:nth-child(n) {
-    margin-bottom: 2%;
-    margin-right: 2%;
+    margin-bottom: 5%;
+    margin-right: 5%;
   }
-  .box:nth-child(3n) {
+  .box:nth-child(n) {
     margin-right: 0;
     margin-bottom: 0;
   }
@@ -192,7 +212,8 @@ input{
   }
 
 
-  /* Steph */
+
+  /* Steph  - userprofile.html */
 
   .boximg {
     margin: 0 0 10px 3%;
@@ -201,7 +222,7 @@ input{
     font-weight: normal;
     font-size: x-large;
     margin-left: 10%;
-    margin-top: 4%;
+    margin-top: 6%;
     margin-bottom: 3%
   }
   .textboxes{
@@ -210,3 +231,7 @@ input{
   .bio{
     margin: 0 5% 5% 3.5%;
   }
+
+  /*.p2{
+    float: right;
+  }*/
