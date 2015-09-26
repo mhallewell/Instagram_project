@@ -224,22 +224,12 @@ input{
   .bio{
     margin: 0 5% 5% 3.5%;
   }
-  /*Javascript stuff */
+
 .error{
   border: 1px solid red;
 }
-  /* End of Javascript stuff*/
 
-h2 span{/*
-    position: relative;
-    top: 50%;
-    left: 47%;
-    margin-right: -50px;
-    margin-left: -50px;
-    width: 200px;
-    height: 150px;
-    text-align: center;*/
-
+h2 span{
    position: absolute;
    top: 200px;
    left: 0;
