@@ -1,0 +1,12 @@
+{{#if posts.length}}
+  {{#each posts}}
+    <div class="box">
+      <img src="{{this.images.standard_resolution.url}}" />
+      <p>{{this.likes.count}} Likes {{this.comments.count}} comments</p2>
+    </div>
+  {{/each}}
+{{else}}
+  {{#if noPosts}}
+    <p>No posts found</p>
+  {{/if}}
+{{/if}}

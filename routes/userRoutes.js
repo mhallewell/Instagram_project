@@ -27,7 +27,7 @@ router.get('/dashboard', function(req, res, next) {
     }
     console.log(feed)
     res.render('dashboard', {
-      feed: feed.data
+      posts: feed.data
     })
   })
 })
@@ -45,6 +45,34 @@ router.get('/search', function(req, res) {
     layout: 'auth_base',
     title: 'Search Page',
     welcome: 'Welcome to your searches'
+  })
+})
+
+router.post('/search', function(req, res, next) {
+  var options = {
+    url: 'https://api.instagram.com/v1/tags/' + req.body.tag + '/media/recent?access_token='+ req.session.access_token
+  }
+  request.get(options, function(error, response, body){
+    if(error) {return next(error)}
+
+    try{
+        var feed = JSON.parse(body)
+    }
+    catch(err){
+      return res.redirect('/')
+    }
+
+    if(feed.meta.code > 200){
+      return next(feed.meta.error_message)
+    }
+
+    if (feed.data.length == 0) {
+      var noPosts = true;
+    }
+    res.render('search', {
+      posts: feed.data,
+      noPosts: noPosts
+    })
   })
 })
 

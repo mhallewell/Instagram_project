@@ -16,6 +16,8 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.urlencoded({extended: false })) //parses data into a usable object
+
 app.use(session({
   cookieName: 'session',
   secret: 'thisismysecret',
@@ -26,7 +28,6 @@ app.use(session({
 app.use('/', marketingRoutes)
 app.use('/user', userRoutes)
 
-//app.use(bodyParser.urlencoded({extended: false })) //parses data into a usable object
 app.get('/', function(req, res){
   res.render('index')
 })
@@ -43,6 +44,8 @@ app.get('/authorize', function(req, res){
 
   res.redirect(url)
 })
+
+// var url = 'https://api.instagram.com/v1/tags/search?q='+ query + '&access_token=' + ACCESS-TOKEN
 
 app.get('/auth/finalize', function(req, res){
   if(req.query.error == 'access_denied'){
