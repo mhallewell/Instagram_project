@@ -27,6 +27,9 @@ router.get('/dashboard', function(req, res, next) {
     }
     console.log(feed)
     res.render('dashboard', {
+      layout: 'auth_base',
+      title: 'User Dashboard',
+      welcome: 'Welcome to your dashboard!',
       posts: feed.data
     })
   })
