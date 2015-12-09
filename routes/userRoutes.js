@@ -3,11 +3,7 @@ var request = require('request')
 var router = express.Router();
 
 router.get('/dashboard', function(req, res, next) {
-  // res.render('dashboard', {
-  //   layout: 'auth_base',
-  //   title: 'User Dashboard!',
-  //   welcome: 'Welcome to your dashboard!'
-  // })
+
   console.log('here')
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token='+ req.session.access_token
