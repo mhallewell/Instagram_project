@@ -4,22 +4,22 @@
 <body class="cs-squeeze">
 
 
-<form class="user-form" action="/savedsearches/add" method="post">
+<form class="user-form" action="/user/savedsearches/add" method="post">
   <input type="hidden" name="_id" value="{{user._id}}">
   <p>
-    <input type="text" name="tag" value="" placeholder="Tag Name">
+    <input type="text" name="search" value="" placeholder="Tag Name">
   </p>
   <p>
     <button type="submit">Submit</button>
   </p>
 </form>
 
-{{#if user.savedsearches}}
+{{#if user.tags}}
   <h2>Current Tags</h2>
-  {{#each user.savedsearches}}
-    <form action="/savedsearches/remove" method="post">
+  {{#each user.tags}}
+    <form action="/user/savedsearches/remove" method="post">
       {{this}}
-      <input type="hidden" name="savedsearches" value="{{this}}">
+      <input type="hidden" name="search" value="{{this}}">
       <button type="submit">Delete</button>
     </form>
   {{/each}}

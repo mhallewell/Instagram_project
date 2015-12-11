@@ -64,6 +64,7 @@ router.get('/savedsearches', function(req, res) {
   if (req.session.userId) {
     //Find user
     Users.find(req.session.userId, function(document) {
+      console.log(document)
       if (!document) return res.redirect('/')
       //Render the update view
       res.render('savedsearches', {
@@ -75,21 +76,21 @@ router.get('/savedsearches', function(req, res) {
   }
 })
 
-router.post('/savedsearches', function(req, res) {
-  var tag = req.body.tag
-  var userId = req.session.userId
-  //Add the tag to the user
-  Users.addTag(userId, tag, function() {
-    res.redirect('/savedsearches')
-  })
-})
-
-router.post('/savedsearches', function(req, res) {
-  var tag = req.body.tag
+router.post('/savedsearches/remove', function(req, res) {
+  var tag = req.body.search
   var userId = req.session.userId
   //Add the tag to the user
   Users.removeTag(userId, tag, function() {
-    res.redirect('/savedsearches')
+    res.redirect('/user/savedsearches')
+  })
+})
+
+router.post('/savedsearches/add', function(req, res) {
+  var tag = req.body.search
+  var userId = req.session.userId
+  //Add the tag to the user
+  Users.addTag(userId, tag, function() {
+    res.redirect('/user/savedsearches')
   })
 })
 
