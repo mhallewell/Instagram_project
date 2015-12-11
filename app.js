@@ -8,6 +8,8 @@ var request 				= require('request')
 var querystring 		= require('querystring')
 var session 				= require('express-session')
 var cfg 						= require('./config')
+var db              = require('./db')
+var Users           = require('./models/users')
 
 var app = express();
 
@@ -66,22 +68,36 @@ app.get('/auth/finalize', function(req, res){
 
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
+    var user = data.user
+
     req.session.access_token = data.access_token
-    res.redirect('/user/dashboard')
+    // Add userId session variable found in data.user.id
+    req.session.userId = data.user.id
+    user._id = user.id
+    delete user.id
+
+    // Call find method of users model to check if user exists in mongodb
+    Users.find(user._id, function(document){
+      if(!document){
+        // If no user found then call insert method of user model
+        Users.insert(user, function(result){
+          res.redirect('/feed')
+        })
+      } else {
+        // If user is found then just redirect like you are below
+        res.redirect('/user/dashboard')
+      }
+    })
   })
 })
 
-
-
-// app.get('/user/dashboard', function (req, res, next) {
-//
-// })
-// app.use(function(err, req, res, next){
-//   res.status(err.status || 500);
-//   res.render('error', {
-//     message: err
-//     error: {}
-//   });
-// });
-
-app.listen(3000)
+db.connect('mongodb://dbuser:password@ds049548.mongolab.com:49548/testing', function(err){
+  if(err){
+    console.log('Unable to connect to Mongo')
+    process.exit(1)
+  } else {
+    app.listen(3000, function(){
+      console.log('Listening on port 3000...')
+    })
+  }
+})
