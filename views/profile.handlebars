@@ -1,29 +1,26 @@
 <head>
   <title>Profile</title>
 </head>
-<div class = "bio">
   <h1>User Profile</h1>
-  <div class="input">
-    <div class="boximg">
+  {{user}}
+    <p>
       <img src="http://placehold.it/300x200" />
-    </div>
-    <form class = textboxes>
-      Name:<br>
-      <input type="text" name="Name">
-      <br>
-      <br>
-      Email:<br>
-      <input type="text" name="Email">
-      <br>
-      <br>
-       Bio:<br>
-      <!--<input type="text" name="Bio"> -->
-    </form>
-    <textarea class = "bio" rows="4" cols="35">
-    </textarea>
-<p>
-    <button type="submit">Submit</button>
-</p>
-
-  </div>
-</div>
+    </p>
+    <form class="user-form" action="" method="post">
+    <input type="hidden" name="_id" value="{{user._id}}">
+    <p>
+      <input type="text" name="username" value="{{user.username}}" placeholder="Username">
+    </p>
+    <p>
+      <input type="text" name="full_name" value="{{user.full_name}}" placeholder="Name">
+    </p>
+    <p>
+      <input type="text" name="email" value="{{user.email}}" placeholder="Email">
+    </p>
+    <p>
+      <input type="text" name="bio" value="{{user.bio}}" placeholder="Bio">
+    </p>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>

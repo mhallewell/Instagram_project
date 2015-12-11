@@ -2,8 +2,31 @@
   <title>Saved Searches</title>
 </head>
 <body class="cs-squeeze">
-    <button class="btn-search" type="searched" name="button"> #search</button>
-    <button class="btn-search" type="searched" name="button"> #search</button>
-    <button class="btn-search" type="searched" name="button"> #search</button>
-    <button class="btn-search" type="searched" name="button"> #search</button>
+
+
+<form class="user-form" action="/savedsearches/add" method="post">
+  <input type="hidden" name="_id" value="{{user._id}}">
+  <p>
+    <input type="text" name="tag" value="" placeholder="Tag Name">
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+{{#if user.savedsearches}}
+  <h2>Current Tags</h2>
+  {{#each user.savedsearches}}
+    <form action="/savedsearches/remove" method="post">
+      {{this}}
+      <input type="hidden" name="savedsearches" value="{{this}}">
+      <button type="submit">Delete</button>
+    </form>
+  {{/each}}
+{{/if}}
+
+<button class="btn-search" type="searched" name="button"> #search</button>
+<button class="btn-search" type="searched" name="button"> #search</button>
+<button class="btn-search" type="searched" name="button"> #search</button>
+<button class="btn-search" type="searched" name="button"> #search</button>
 </body>

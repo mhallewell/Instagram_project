@@ -81,7 +81,7 @@ app.get('/auth/finalize', function(req, res){
       if(!document){
         // If no user found then call insert method of user model
         Users.insert(user, function(result){
-          res.redirect('/feed')
+          res.redirect('/user/dashboard')
         })
       } else {
         // If user is found then just redirect like you are below
@@ -90,6 +90,8 @@ app.get('/auth/finalize', function(req, res){
     })
   })
 })
+
+
 
 db.connect('mongodb://dbuser:password@ds049548.mongolab.com:49548/testing', function(err){
   if(err){
